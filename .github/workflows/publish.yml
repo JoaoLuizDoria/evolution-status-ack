@@ -1,0 +1,33 @@
+name: Build and verify status ACK image
+on:
+  push:
+    branches: [codex/status-ack-image]
+permissions:
+  contents: read
+  packages: write
+concurrency:
+  group: status-ack-image
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Build from the immutable official base
+        run: |
+          docker pull evoapicloud/evolution-api@sha256:456b4104b0ddffbb092d6b3c0560a4ae86fc3e014e885b882aca4b1b371dfc81
+          docker build --platform linux/amd64 --label org.opencontainers.image.source=https://github.com/JoaoLuizDoria/evolution-status-ack -t status-ack-candidate build
+      - name: Compare all application files, startup contract, socket ACK and isolated startup
+        run: bash ci/smoke.sh status-ack-candidate
+      - name: Publish the exact tested image
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          tag="ghcr.io/joaoluizdoria/evolution-status-ack:2.3.7-rc9-${GITHUB_SHA}"
+          docker tag status-ack-candidate "$tag"
+          docker push "$tag"
+          docker image inspect "$tag" --format 'PUBLISHED_EXACT_IMAGE {{json .RepoDigests}}'
+          echo 'No production secrets, sessions, phones, schedules or queue records were used.' >> "$GITHUB_STEP_SUMMARY"
+          docker logout ghcr.io

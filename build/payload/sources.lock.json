@@ -1,0 +1,15 @@
+{
+  "format": "baileys-status-evaluation-sources-v1",
+  "version": "7.0.0-rc.9",
+  "tarball": "https://registry.npmjs.org/baileys/-/baileys-7.0.0-rc.9.tgz",
+  "integrity": "sha512-Txd2dZ9MHbojvsHckeuCnAKPO/bQjKxua/0tQSJwOKXffK5vpS82k4eA/Nb46K0cK0Bx+fyY0zhnQHYMBriQcw==",
+  "shasum": "fd1ad83e9bfef275b2d93627841bdb85d00993d8",
+  "baselineFileSha256": "8b9329ddf95fa7a1785826d8861af236f5f055ff22a5ed1ce52afdf9565d873e",
+  "upstreamProposal": "https://github.com/WhiskeySockets/Baileys/pull/2883",
+  "upstreamCommit": "b4956bcd5f101844eca129d01210616b084e9820",
+  "upstreamStateAtReview": "OPEN",
+  "productionChangesAuthorized": false,
+  "realPairingAuthorized": false,
+  "realMessagesAuthorized": false,
+  "railwayExecutionAuthorizedByThisEvaluation": false
+}

@@ -1,0 +1,76 @@
+{
+  "schema": "PUBLIC_STATUS_ACK_SOURCE_V1",
+  "privateDataIncluded": false,
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1083,
+      "sha256": "0d814b3b15ae28401c32d3d0042c9537f1216be765850fdb36ad507a3cc90aa4"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 420,
+      "sha256": "1cc60d2ea48c07ac27267622eacf2b6dbf4bb73269c7fbde5874d0568ae5eebb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1424,
+      "sha256": "8523698259be10691b216378389c45c0e9987d817c92ccaafc30961cb56b69a4"
+    },
+    {
+      "path": ".github/workflows/publish.yml",
+      "bytes": 1480,
+      "sha256": "af68106cce40d516a5af5186246a7e1d2d083ae142e564405107b3c4717e359b"
+    },
+    {
+      "path": "build/Dockerfile",
+      "bytes": 388,
+      "sha256": "2cc4acb06507e28bad29d81193a52a8cda94704c65268b50a70fed9eab5626bc"
+    },
+    {
+      "path": "build/payload/backport.mjs",
+      "bytes": 2171,
+      "sha256": "1a20e0b3d583b4a365cb1e7cd9c1189d9774fd750d65f31c058c5ce3d5726911"
+    },
+    {
+      "path": "build/payload/sources.lock.json",
+      "bytes": 760,
+      "sha256": "96e965cf804cc6c0e631e671cd324c5598fd9327a42014f22911e71b4eacf750"
+    },
+    {
+      "path": "build/payload/release/install.mjs",
+      "bytes": 3871,
+      "sha256": "bd058e133f2a2ef39b658bbddb3423a41b91b332977918ccfe2b8a83a59a38dc"
+    },
+    {
+      "path": "build/payload/release/release.json",
+      "bytes": 1568,
+      "sha256": "fa10a495f1d1e382c958928eb7722adeb0b70df026d86c1813079efe39e09759"
+    },
+    {
+      "path": "ci/manifest.mjs",
+      "bytes": 694,
+      "sha256": "671132b8fb45cc15e3c01f457b32e37e9bb6b6e471398f38f4c22a1edf2d70ac"
+    },
+    {
+      "path": "ci/smoke.sh",
+      "bytes": 3103,
+      "sha256": "18a3122c5bd030fae1147f7820ec620cbd506d1188c226899559822ebae38931"
+    },
+    {
+      "path": "ci/verify-image.mjs",
+      "bytes": 1704,
+      "sha256": "a2410472f155ec182a58a898162de59e9e6abe1782967fd14fc7f77787d24300"
+    },
+    {
+      "path": "tests/fake-websocket.mjs",
+      "bytes": 814,
+      "sha256": "2a0f388286c44504b594c76c5114815e93d11a73409529b2c914a5d66188a52d"
+    },
+    {
+      "path": "tests/real-socket.test.mjs",
+      "bytes": 8086,
+      "sha256": "6a3208ae8b5fbb9ecd9741ddfa58024432424b5c7d1d88dd0f5d3ec5f39af6ab"
+    }
+  ]
+}
