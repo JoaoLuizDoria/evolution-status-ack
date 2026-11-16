@@ -4,7 +4,7 @@ import {spawnSync} from 'node:child_process';
 const [base,image]=process.argv.slice(2);
 assert.match(base,/^evoapicloud\/evolution-api@sha256:[a-f0-9]{64}$/);
 assert.match(image,/^[a-z0-9./:_-]+$/);
-function docker(args){const r=spawnSync('docker',args,{encoding:'utf8',timeout:180000,maxBuffer:40*1024*1024});if(r.status!==0)throw Error('DOCKER_VERIFICATION_FAILED:'+args[0]);return r.stdout;}
+function docker(args){const r=spawnSync('docker',args,{encoding:'utf8',timeout:180000,maxBuffer:128*1024*1024});if(r.status!==0)throw Error('DOCKER_VERIFICATION_FAILED:'+args[0]+':'+(r.error?.code??r.status)+':'+r.stderr?.slice(-2500));return r.stdout;}
 const b=JSON.parse(docker(['image','inspect',base]))[0],c=JSON.parse(docker(['image','inspect',image]))[0];
 const fields=['Entrypoint','Cmd','User','WorkingDir','ExposedPorts','Env','Volumes','Healthcheck','StopSignal'];
 for(const field of fields)assert.deepEqual(c.Config[field],b.Config[field],'startup/config drift: '+field);

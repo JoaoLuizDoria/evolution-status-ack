@@ -1,7 +1,10 @@
 {
-  "schema": "PUBLIC_STATUS_ACK_SOURCE_V1",
-  "privateDataIncluded": false,
   "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
     {
       "path": "LICENSE",
       "bytes": 1083,
@@ -59,8 +62,8 @@
     },
     {
       "path": "ci/verify-image.mjs",
-      "bytes": 1704,
-      "sha256": "a2410472f155ec182a58a898162de59e9e6abe1782967fd14fc7f77787d24300"
+      "bytes": 1762,
+      "sha256": "27c185e6a8d26e565ed5a4cf1bce9281db16c2fd48278fbb9933c015abcc8dc0"
     },
     {
       "path": "tests/fake-websocket.mjs",
@@ -72,5 +75,7 @@
       "bytes": 8086,
       "sha256": "6a3208ae8b5fbb9ecd9741ddfa58024432424b5c7d1d88dd0f5d3ec5f39af6ab"
     }
-  ]
+  ],
+  "schema": "PUBLIC_STATUS_ACK_SOURCE_V1",
+  "privateDataIncluded": false
 }
