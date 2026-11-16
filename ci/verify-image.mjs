@@ -9,7 +9,7 @@ const b=JSON.parse(docker(['image','inspect',base]))[0],c=JSON.parse(docker(['im
 const fields=['Entrypoint','Cmd','User','WorkingDir','ExposedPorts','Env','Volumes','Healthcheck','StopSignal'];
 for(const field of fields)assert.deepEqual(c.Config[field],b.Config[field],'startup/config drift: '+field);
 const script=fs.readFileSync(new URL('./manifest.mjs',import.meta.url),'utf8');
-const manifest=tag=>JSON.parse(docker(['run','--rm','--network','none','--entrypoint','node',tag,'-e',script]));
+const manifest=tag=>JSON.parse(docker(['run','--rm','--network','none','--entrypoint','node',tag,'--input-type=module','-e',script]));
 const before=manifest(base),after=manifest(image);assert.deepEqual(Object.keys(after),Object.keys(before));
 const changed=Object.keys(before).filter(key=>JSON.stringify(before[key])!==JSON.stringify(after[key]));
 assert.deepEqual(changed,['node_modules/baileys/lib/Socket/messages-recv.js']);

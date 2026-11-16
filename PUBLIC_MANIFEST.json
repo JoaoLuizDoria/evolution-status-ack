@@ -1,4 +1,6 @@
 {
+  "schema": "PUBLIC_STATUS_ACK_SOURCE_V1",
+  "privateDataIncluded": false,
   "files": [
     {
       "path": ".gitattributes",
@@ -62,8 +64,8 @@
     },
     {
       "path": "ci/verify-image.mjs",
-      "bytes": 1762,
-      "sha256": "27c185e6a8d26e565ed5a4cf1bce9281db16c2fd48278fbb9933c015abcc8dc0"
+      "bytes": 1784,
+      "sha256": "9b866b970c33946afc0e3b367186d42a5ac33979f4bdba966cf9a19cc6271ea7"
     },
     {
       "path": "tests/fake-websocket.mjs",
@@ -75,7 +77,5 @@
       "bytes": 8086,
       "sha256": "6a3208ae8b5fbb9ecd9741ddfa58024432424b5c7d1d88dd0f5d3ec5f39af6ab"
     }
-  ],
-  "schema": "PUBLIC_STATUS_ACK_SOURCE_V1",
-  "privateDataIncluded": false
+  ]
 }
